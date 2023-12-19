@@ -1,0 +1,51 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3efef;
+
+}
+
+.tarjeta {
+    width: 25rem;
+    height: 25rem;
+    perspective: 30rem;
+    cursor: pointer;
+ 
+}
+
+.cara {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    color: white; 
+    transition: transform 0.6s;
+    background-size: cover; 
+}
+
+.frente {
+    z-index: 2;
+    transform: rotateY(0deg);
+    background-image: url('img/Generate_a_creative_3Drendered_postcard_whit_so.jpg'); 
+}
+
+.reverso {
+    transform: rotateY(180deg);
+    background-image: url('img/pixar_poster_movie_of_a_young_man_with_black_wav\ \(1\).jpg');
+}
+
+.tarjeta.girar .frente {
+    transform: rotateY(-180deg);
+}
+
+.tarjeta.girar .reverso {
+    transform: rotateY(0deg);
+    z-index: 1;
+}
